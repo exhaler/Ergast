@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { DialogDataComponent } from './dialog-data/dialog-data.component';
+import { RaceDialogComponent } from './race-dialog/race-dialog.component';
+import { DriverDialogComponent } from './driver-dialog/driver-dialog.component';
 import { ErgastService } from '../shared/services/ergast.service';
-import { Race } from '../shared/models';
+import { Race, Driver } from '../shared/models';
 
 @Component({
   selector: 'app-home',
@@ -36,12 +37,21 @@ export class HomeComponent implements OnInit {
     return race.winner.code === this.winnerCode;
   }
 
-  openDialog(race: Race) {
-    this.dialog.open(DialogDataComponent, {
+  openRaceDialog(race: Race) {
+    this.dialog.open(RaceDialogComponent, {
       data: {
         race,
       },
-      panelClass: 'race-details-modal'
+      panelClass: 'race-details-modal',
+    });
+  }
+
+  openDriverDialog(winner: Driver, driver: Driver[]) {
+    this.dialog.open(DriverDialogComponent, {
+      data: {
+        winner,
+        driver,
+      }
     });
   }
 }

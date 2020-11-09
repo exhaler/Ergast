@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DialogDataComponent } from './dialog-data.component';
+import { RaceDialogComponent } from './race-dialog.component';
 
 describe('DialogDataComponent', () => {
-  let component: DialogDataComponent;
-  let fixture: ComponentFixture<DialogDataComponent>;
+  let component: RaceDialogComponent;
+  let fixture: ComponentFixture<RaceDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogDataComponent ]
+      declarations: [ RaceDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DialogDataComponent);
+    fixture = TestBed.createComponent(RaceDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

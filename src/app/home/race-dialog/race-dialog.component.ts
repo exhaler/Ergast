@@ -7,10 +7,10 @@ import { Driver, Race } from '../../shared/models';
 
 @Component({
   selector: 'app-dialog-data',
-  templateUrl: './dialog-data.component.html',
-  styleUrls: ['./dialog-data.component.scss'],
+  templateUrl: './race-dialog.component.html',
+  styleUrls: ['./race-dialog.component.scss'],
 })
-export class DialogDataComponent implements AfterViewInit {
+export class RaceDialogComponent implements AfterViewInit {
   dataSource = new MatTableDataSource<Driver>();
   displayedColumns: string[] = [
     'position',

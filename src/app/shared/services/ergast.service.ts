@@ -70,6 +70,7 @@ export class ErgastService {
   private createDriverObject(driver) {
     let tmpLap = '';
     let tmpSpeed = '';
+    let tmpTime = '';
 
     if (driver.FastestLap) {
       tmpLap = driver.FastestLap.lap;
@@ -82,10 +83,16 @@ export class ErgastService {
         driver.FastestLap.AverageSpeed.units;
     }
 
+    if (driver.Time) {
+      tmpTime = driver.Time.time;
+    }
+
     return {
       position: driver.position,
       car: driver.Constructor.name,
       driver: driver.Driver.givenName + ' ' + driver.Driver.familyName,
+      time: tmpTime,
+      laps: driver.laps,
       averageSpeed: tmpSpeed,
       fastestLap: tmpLap,
     };

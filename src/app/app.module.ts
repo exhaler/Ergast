@@ -7,10 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AngularMaterialModule } from './material.module';
-import { DialogDataComponent } from './home/dialog-data/dialog-data.component';
+import { RaceDialogComponent } from './home/race-dialog/race-dialog.component';
+import { DriverDialogComponent } from './home/driver-dialog/driver-dialog.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, DialogDataComponent],
+  declarations: [AppComponent, HomeComponent, RaceDialogComponent, DriverDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

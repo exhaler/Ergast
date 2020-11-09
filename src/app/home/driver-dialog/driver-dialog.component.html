@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>{{ winner.givenName }} {{ winner.familyName }}</h2>
+<mat-dialog-content class="mat-typography">
+  <p>
+    Wikipedia:
+    <a [href]="winner.url" target="_blank">{{ winner.url }}</a
+    ><mat-icon color="primary">open_in_new</mat-icon>
+  </p>
+  <p>Date of birth: {{ winner.dateOfBirth }}</p>
+  <p>Nationality: {{ winner.nationality }}</p>
+  <p>Laps: {{ driver.laps }}</p>
+  <p>Time: {{ driver.time }}</p>
+  <p>Car: {{ driver.car }}</p>
+  <p>Fastest Lap: {{ driver.fastestLap }}</p>
+  <p>Average Speed: {{ driver.averageSpeed }}</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

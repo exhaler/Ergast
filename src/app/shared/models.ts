@@ -2,6 +2,16 @@ export class Driver {
   code: string;
   familyName: string;
   givenName: string;
+  dateOfBirth: string;
+  nationality: string;
+  url: string;
+  laps: string;
+  time: string;
+  car: string;
+  fastestLap: string;
+  averageSpeed: string;
+  driver?: Driver;
+  winner?: Driver;
 }
 
 export class Race {

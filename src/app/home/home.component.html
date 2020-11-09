@@ -1,5 +1,8 @@
 <mat-toolbar color="primary">
-  <h1>F1 World Champions</h1>
+  <h1>
+    <img src="assets/images/f1-logo.png" alt="F1" class="logo" /> F1 World
+    Champions
+  </h1>
 </mat-toolbar>
 
 <mat-progress-spinner mode="indeterminate" *ngIf="isLoading">
@@ -17,8 +20,7 @@
 
       <mat-list *ngIf="!isRaceLoading; else isRaceLoadingBar">
         <mat-list-item
-          *ngFor="let race of racesList"
-          (click)="openDialog(race)"
+          *ngFor="let race of racesList; let i = index"
           [ngClass]="{ 'season-winner': isRaceWinnerSeasonWinner(race) }"
           >Round {{ race.round }} - {{ race.winner.givenName }}
           {{ race.winner.familyName }}
@@ -30,6 +32,20 @@
             color="accent"
             >emoji_events</mat-icon
           >
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="openRaceDialog(race)">
+              View race details
+            </button>
+            <button
+              mat-menu-item
+              (click)="openDriverDialog(race.winner, race.drivers[i])"
+            >
+              View driver details
+            </button>
+          </mat-menu>
           <mat-divider></mat-divider>
         </mat-list-item>
       </mat-list>
