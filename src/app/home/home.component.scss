@@ -1,0 +1,23 @@
+.mat-accordion-container {
+  padding: 10px;
+
+  .mat-progress-bar {
+    padding-top: 15px;
+  }
+
+  .mat-expansion-panel-header.mat-expanded {
+    background-color: #6878ce;
+
+    .mat-expansion-panel-header-title {
+      color: #fff;
+    }
+  }
+
+  .mat-icon {
+    margin-left: 5px;
+  }
+
+  .season-winner {
+    background: #ffd740;
+  }
+}

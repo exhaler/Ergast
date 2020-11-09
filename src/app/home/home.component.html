@@ -1,0 +1,42 @@
+<mat-toolbar color="primary">
+  <h1>F1 World Champions</h1>
+</mat-toolbar>
+
+<mat-progress-spinner mode="indeterminate" *ngIf="isLoading">
+</mat-progress-spinner>
+
+<div class="mat-accordion-container" *ngIf="!isLoading">
+  <mat-accordion>
+    <mat-expansion-panel
+      *ngFor="let year of yearList"
+      (opened)="getSeasonByYear(year)"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title> {{ year }} Season </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-list *ngIf="!isRaceLoading; else isRaceLoadingBar">
+        <mat-list-item
+          *ngFor="let race of racesList"
+          (click)="openDialog(race)"
+          [ngClass]="{ 'season-winner': isRaceWinnerSeasonWinner(race) }"
+          >Round {{ race.round }} - {{ race.winner.givenName }}
+          {{ race.winner.familyName }}
+
+          <mat-icon
+            *ngIf="isRaceWinnerSeasonWinner(race)"
+            aria-hidden="false"
+            aria-label="Season winner"
+            color="accent"
+            >emoji_events</mat-icon
+          >
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+
+      <ng-template #isRaceLoadingBar>
+        <mat-progress-bar mode="buffer"></mat-progress-bar>
+      </ng-template>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
