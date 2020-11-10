@@ -10,8 +10,15 @@ export class Driver {
   car: string;
   fastestLap: string;
   averageSpeed: string;
-  driver?: Driver;
-  winner?: Driver;
+}
+
+export class Winner {
+  code: string;
+  dateOfBirth: string;
+  nationality: string;
+  familyName: string;
+  givenName: string;
+  url: string;
 }
 
 export class Race {
@@ -20,7 +27,7 @@ export class Race {
   circuitUrl: string;
   raceName: string;
   raceUrl: string;
-  winner: Driver;
+  winner: Winner;
   drivers: Driver[];
   race?: Race;
 }

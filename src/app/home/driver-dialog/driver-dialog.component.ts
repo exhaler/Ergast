@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { Driver } from '../../shared/models';
+import { Driver, Winner } from '../../shared/models';
 
 @Component({
   selector: 'app-driver-dialog',
@@ -9,12 +9,13 @@ import { Driver } from '../../shared/models';
   styleUrls: ['./driver-dialog.component.scss'],
 })
 export class DriverDialogComponent {
+  winner: Winner;
+  driver: Driver;
+
   constructor(
-    @Inject(MAT_DIALOG_DATA) public winner: Driver,
-    @Inject(MAT_DIALOG_DATA) public driver: Driver
+    @Inject(MAT_DIALOG_DATA) private data: any
   ) {
-    this.winner = this.winner.winner;
-    this.driver = this.driver.driver;
-    console.log(this.driver);
+    this.winner = this.data.winner;
+    this.driver = this.data.driver;
   }
 }

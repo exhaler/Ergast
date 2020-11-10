@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { DriverDialogComponent } from './driver-dialog.component';
 
@@ -8,9 +9,18 @@ describe('DriverDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DriverDialogComponent ]
-    })
-    .compileComponents();
+      declarations: [DriverDialogComponent],
+      providers: [
+        {
+          provide: MAT_DIALOG_DATA,
+          useValue: {
+            winner: { givenName: 'Giancarlo Fisichella' },
+            driver: { laps: '57' },
+          },
+        },
+        { provide: MatDialogRef, useValue: {} },
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

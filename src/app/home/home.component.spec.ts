@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ErgastService } from '../shared/services/ergast.service';
+import { ErgastServiceMock } from '../shared/services/ergast.service.mock';
 
 import { HomeComponent } from './home.component';
 
@@ -8,9 +11,10 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
-    })
-    .compileComponents();
+      imports: [MatDialogModule],
+      declarations: [HomeComponent],
+      providers: [{ provide: ErgastService, useClass: ErgastServiceMock }],
+    }).compileComponents();
   });
 
   beforeEach(() => {
