@@ -26,4 +26,22 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should contain "F1 World Champions"', () => {
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    expect(bannerElement.textContent).toContain('F1 World Champions');
+  });
+
+  it('should contain "F1 World Champions"', () => {
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    expect(bannerElement.textContent).toContain('F1 World Champions');
+  });
+
+  it('should render 2 years', () => {
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    const panels = bannerElement.querySelectorAll('mat-expansion-panel');
+    expect(panels.length).toEqual(2);
+    expect(panels[0].textContent.trim()).toEqual('2005 Season');
+    expect(panels[1].textContent.trim()).toEqual('2006 Season');
+  });
 });
