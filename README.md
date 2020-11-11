@@ -3,6 +3,8 @@ The purpose of this exercise is to create a single page application using [Ergas
 
 I kept things simple by using the well-established [Angular Material](https://material.angular.io/), and chose to use Angular as i've already worked with it, love Typescript and also wanted to test v10.
 
+I assumed the target audience of the website are people who don't know a lot about F1, but are curious to have some basic information about each season. As such the website will use an accordion to show each season with a list of each round in the season. The champion of that season is clearly highlighted with an icon next to his name. I also implemented a button to show race details for each round along with the drivers details for that particular round. The idea behind the UI was to keep things simple, make it easy for the visitor to see the race and driver details without navigating away from the page.
+
 The SPA is hosted on github https://exhaler.github.io/Ergast by using the gh-branch.
 
 ## Development server
